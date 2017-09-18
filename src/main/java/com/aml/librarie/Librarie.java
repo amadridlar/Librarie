@@ -1,4 +1,4 @@
-package librarie;
+package com.aml.librarie;
 
 public class Librarie {
 	
