@@ -7,7 +7,7 @@ public class Librarie {
 	//PROPERTIES
 	private String NIF;
 	private String name;
-	private ArrayList <Book> bookList;
+	private ArrayList<Book> bookList = new ArrayList<Book>();
 
 	  
 	

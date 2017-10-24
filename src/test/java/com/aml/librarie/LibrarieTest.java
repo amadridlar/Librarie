@@ -3,13 +3,22 @@ package com.aml.librarie;
 import static org.junit.Assert.*;
 
 import org.junit.After;
+import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
 public class LibrarieTest {
+	
+	private int ref = 001;
+	private String authorName = "John Ireland";
+	private String bookName = "Kill'em all!"; 
+	Book book = new Book(ref, bookName, authorName);
+	Librarie librarie;
+	
 
 	@Before
 	public void setUp() throws Exception {
+		librarie = new Librarie(); 
 	}
 
 	@After
@@ -18,12 +27,14 @@ public class LibrarieTest {
 
 	@Test
 	public void testAddBook() {
-		fail("Not yet implemented");
+		Assert.assertTrue(librarie.addBook(book));
+		
 	}
 
 	@Test
 	public void testRemoveBook() {
-		fail("Not yet implemented");
+		librarie.addBook(book);
+		Assert.assertTrue(librarie.removeBook(book));
 	}
 
 }

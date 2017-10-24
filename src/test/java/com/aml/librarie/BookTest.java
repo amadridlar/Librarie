@@ -1,6 +1,6 @@
 package com.aml.librarie;
 
-import static org.junit.Assert.*;
+
 
 import org.junit.After;
 import org.junit.Assert;
@@ -64,12 +64,15 @@ public class BookTest {
 
 	@Test
 	public void testGetBookName() {
-		fail("Not yet implemented");
+		book =new Book(ref, bookName, authorName);
+		Assert.assertEquals(bookName, book.getBookName());
 	}
 
 	@Test
 	public void testSetBookName() {
-		fail("Not yet implemented");
+		book = new Book();
+		book.setBookName(bookName);
+		Assert.assertEquals(bookName, book.getBookName());
 	}
 
 }
