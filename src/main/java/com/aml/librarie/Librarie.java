@@ -3,8 +3,8 @@ package com.aml.librarie;
 public class Librarie {
 	
 	//PROPERTIES
-	private String book;
 	private String NIF;
+	private Book book;
 	  
 	
 	//CONSTRUCTORS
