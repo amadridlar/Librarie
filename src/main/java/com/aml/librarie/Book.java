@@ -14,6 +14,12 @@ public class Book {
 		this.authorName = null;
 	}
 	
+	public Book (int ref, String bookName, String authorName) {
+		this.ref = ref;
+		this.bookName = bookName;
+		this.authorName = authorName;
+	}
+	
 	//methods
 	public void setRef (int ref) {
 		this.ref = ref;
@@ -38,6 +44,8 @@ public class Book {
 	public void setBookName (String name) {
 		this.bookName = name;
 	}
+	
+	
 
 
 }
