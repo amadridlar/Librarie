@@ -74,4 +74,30 @@ public class Librarie {
 		}
 		return book;
 	}
+	
+	/**
+	 * Devuelve un arrayList con los libros que tienen el mismo autor
+	 * @param authorName Nombre del autor de los libros a obtener
+	 * @return ArrayList con todos los libros con el mismo autor
+	 */
+	public ArrayList<Book> getBooksByAuthor (String authorName){
+		ArrayList<Book> sameAuthorBooks = new ArrayList<Book>();
+		
+		for(int i=0; i < bookList.size();i++) {
+			if(bookList.get(i).getAuthorName() == authorName) {
+				sameAuthorBooks.add(bookList.get(i));
+			}
+		}
+		
+		return sameAuthorBooks;
+	}
+	
+	/**
+	 * Devuelve el listado completo de libros
+	 * @return ArrayList <Book>
+	 */
+	public ArrayList<Book> getBookList (){
+		
+		return bookList;
+	}
 }
