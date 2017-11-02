@@ -40,6 +40,18 @@ public class LibrarieTest {
 	}
 	
 	@Test
+	public void testGetBooksByAuthor () {
+		ArrayList<Book> booksWithSameAuthor = new ArrayList<Book>();
+		librarie.addBook(book1);
+		librarie.addBook(bookSameAuthor);
+		booksWithSameAuthor = librarie.getBooksByAuthor(authorName);
+		Assert.assertEquals(authorName, booksWithSameAuthor.get(0).getAuthorName());
+		Assert.assertEquals(booksWithSameAuthor.get(0).getAuthorName(), booksWithSameAuthor.get(1).getAuthorName());
+		
+	}
+
+	
+	@Test
 	public void testGetBookList () {
 		ArrayList<Book> bookListObtained = new ArrayList <Book>();
 		librarie.addBook(book1);
@@ -50,15 +62,5 @@ public class LibrarieTest {
 		Assert.assertEquals(authorName, bookListObtained.get(1).getAuthorName());
 	}
 	
-	@Test
-	public void testGetBooksByAuthor () {
-		ArrayList<Book> booksWithSameAuthor = new ArrayList<Book>();
-		librarie.addBook(book1);
-		librarie.addBook(bookSameAuthor);
-		booksWithSameAuthor = librarie.getBooksByAuthor(authorName);
-		Assert.assertEquals(authorName, booksWithSameAuthor.get(0).getAuthorName());
-		Assert.assertEquals(booksWithSameAuthor.get(0).getAuthorName(), booksWithSameAuthor.get(1).getAuthorName());
-		
-	}
 
 }
