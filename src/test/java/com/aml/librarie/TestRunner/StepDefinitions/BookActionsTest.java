@@ -77,11 +77,11 @@ public class BookActionsTest {
 		Assert.assertNotNull(book);;
 	}
 
-	@Then("^ref is (-\\d+), author name is NULL and book name is NULL$")
-	public void ref_is_author_name_is_NULL_and_book_name_is_NULL(int arg1) throws Throwable {
+	@Then("^ref is (-\\d+), author name is \"([^\"]*)\" and book name is \"([^\"]*)\"$")
+	public void ref_is_author_name_is_and_book_name_is(int arg1, String arg2, String arg3) throws Throwable {
 		Assert.assertEquals(arg1, book.getRef());
-		Assert.assertNull(book.getAuthorName());
-		Assert.assertNull(book.getBookName());
+		Assert.assertEquals(arg2, book.getAuthorName());
+		Assert.assertEquals(arg3, book.getBookName());
 	}
 
 }

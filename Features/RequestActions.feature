@@ -21,10 +21,10 @@
 Feature: Request to the server to storage and get books and the library
 
 @tag1
-Scenario: Create a JSON	 with the data of a book
+Scenario: Create a JSON	 with the data of a book with empty parameters
 Given a book created without parameters
 When I want to create a JSON of that book
-Then the JSON is created correctly with ref = -1, authorName = NULL and bookName = NULL
+Then the JSON is created correctly with ref = -1, authorName = "" and bookName = ""
 
 @tag2
 Scenario: Post request a JSON with the information of a book

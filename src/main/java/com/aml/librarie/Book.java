@@ -10,8 +10,8 @@ public class Book {
 	//constructors
 	public Book (){
 		this.ref = -1;
-		this.bookName = null;
-		this.authorName = null;
+		this.bookName = "";
+		this.authorName = "";
 	}
 	
 	public Book (int ref, String bookName, String authorName) {

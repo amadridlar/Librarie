@@ -46,7 +46,7 @@ Examples:
 Scenario: Create a book without reference, author name or book name
 When I create a book without parameteres
 Then book is created
-And ref is -1, author name is NULL and book name is NULL
+And ref is -1, author name is "" and book name is ""
 
 
 

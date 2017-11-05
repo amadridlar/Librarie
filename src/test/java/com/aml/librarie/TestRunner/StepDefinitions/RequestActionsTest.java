@@ -27,16 +27,19 @@ public class RequestActionsTest {
 
 	@When("^I want to create a JSON of that book$")
 	public void i_want_to_create_a_JSON_of_that_book() throws Throwable {
+		json = new JSONObject();
+		requestJSON = new RequestJson();
 		json = requestJSON.createBookJson(book);
 		
 	}
 
-	@Then("^the JSON is created correctly with ref = (-\\d+), authorName = NULL and bookName = NULL$")
-	public void the_JSON_is_created_correctly_with_ref_authorName_NULL_and_bookName_NULL(int arg1) throws Throwable {
-		Assert.assertEquals(arg1, json.getString("ref"));
-		
+	@Then("^the JSON is created correctly with ref = (-\\d+), authorName = \"([^\"]*)\" and bookName = \"([^\"]*)\"$")
+	public void the_JSON_is_created_correctly_with_ref_authorName_and_bookName(int arg1, String arg2, String arg3) throws Throwable {
+		Assert.assertEquals(arg1, json.get("ref"));
+		Assert.assertEquals(arg2, json.get("authorName"));
+		Assert.assertEquals(arg3, json.get("bookName"));
 	}
-
+	
 	@Given("^a book created with ref = (\\d+), authorName = \"([^\"]*)\" and bookName = \"([^\"]*)\"$")
 	public void a_book_created_with_ref_authorName_and_bookName(int arg1, String arg2, String arg3) throws Throwable {
 	    // Write code here that turns the phrase above into concrete actions
