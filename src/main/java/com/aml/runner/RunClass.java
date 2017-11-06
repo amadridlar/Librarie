@@ -1,16 +1,15 @@
 package com.aml.runner;
 
-import java.io.IOException;
-
 import org.json.simple.JSONObject;
 
 import com.aml.librarie.Book;
 import com.aml.librarie.request.RequestJson;
 
 
+
 public class RunClass {
 
-	public static void main(String[] args) throws IOException{
+	public static void main(String[] args) {
 		/*
 		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 		Book book;
@@ -27,7 +26,12 @@ public class RunClass {
 		post = new RequestJson();
 		JSONObject json;
 		json = post.createBookJson(book);
-		post.postJson(json);
+		String jsonString = json.toJSONString();
+		System.out.println(jsonString);
+		
+
+					
+		//post.postJson(json);
 	}
 
 }

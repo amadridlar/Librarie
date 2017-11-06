@@ -27,8 +27,33 @@ When I want to create a JSON of that book
 Then the JSON is created correctly with ref = -1, authorName = "" and bookName = ""
 
 @tag2
-Scenario: Post request a JSON with the information of a book
-Given a book created with ref = 112, authorName = "Johny Reland" and bookName = "Kill'em all"
-When I make a post to the URL "C:\\xampp\\htdocs\\myjson\\bookJSON.json"
-Then the json with the book information is storage with ref = 112, authorName = "Johny Reland" and bookName = "Kill'em all"
+Scenario Outline: Create a JSON of a book with completed parameteres
+Given a book created with <ref>, <bookName> and <authorName>
+When I create a JSON of that book
+Then The JSON created has <ref>, <bookName> and <authorName>
+
+Examples:
+|ref  |authorName     |bookName   |
+|123  |"Johny Reland" |"Shoot'em all!" |
+
+@tag3
+Scenario Outline: Post request a JSON with the information of a book and receive a 200 status
+Given a book created 
+When I make a post to the URL <url>
+Then the status code of the response is <status code>
+
+Examples:
+|url                                 |status code |
+|"https://jsonblob.com/api/jsonBlob" |201         |
+
+@tag4
+Scenario Outline: Post a JSON of a book created and the JSON is posted correctly
+Given a JSON of a book created with ref <ref>, bookName <bookName> and authorName <authorName>  
+When I make a post request of that JSON to the url <url> 
+Then I make a get request to the url <url> and the JSON has the ref <ref>, bookName <bookName> and authorName <authorName> correctly
+And status code is <status>
+
+Examples:
+|ref    |authorName    |bookName      |url																 |status |
+|112    |"Johny Reland"|"Shoot'em all"|"https://jsonblob.com/api/jsonBlob" |200    |
 
