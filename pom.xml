@@ -4,6 +4,7 @@
   <artifactId>librarie</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   
+    
   <dependencies>
   <dependency>
 	  <groupId>junit</groupId>
@@ -44,9 +45,7 @@
 </dependency>
 
 
-
-
   
   </dependencies>
-  <packaging>war</packaging>
+  <packaging>jar</packaging>
 </project>
