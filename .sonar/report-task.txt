@@ -1,0 +1,6 @@
+projectKey=com.aml
+serverUrl=http://localhost:4002
+serverVersion=6.6.0.32724
+dashboardUrl=http://localhost:4002/dashboard/index/com.aml
+ceTaskId=AV-b7QNOjDdQSdpivvgX
+ceTaskUrl=http://localhost:4002/api/ce/task?id=AV-b7QNOjDdQSdpivvgX
